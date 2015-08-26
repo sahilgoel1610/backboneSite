@@ -1,4 +1,9 @@
 <html>
+<head>
+    
+    <link href="vendor/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="app/css/main.css" rel="stylesheet">
+  </head>
 	<body>
         <div class="container">
 		<div>Hey there</div>
@@ -8,9 +13,12 @@
 
 	<script type="text/template" id="name">
 		<ul>
-			<li><%=name%></li>
-            <a href="#contacts/edit/<%-id%>" class="editContact">Edit</a> <br>
-            <a href="#contacts/delete/<%-id%>" class="deleteContact">Delete</a> <br>
+			
+        <a href="#contacts/edit/<%-id%>" class="editContact">Edit</a> 
+            <a href="#contacts/delete/<%-id%>" class="deleteContact">Delete</a> 
+      <li><%=name%></li>
+      <li><%=email%></li>
+      <li><%=phone%></li>
             
 		</ul>
 	</script>
@@ -60,6 +68,12 @@
     <script src="vendor/underscore/underscore.js"></script>
     <script src="vendor/backbone/backbone.js"></script>
     <script src="vendor/backbone/backbone.localStorage.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+
 
     <script src="app/js/app.js"></script>
     <script src="app/js/models/question.js"></script>

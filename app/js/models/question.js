@@ -7,13 +7,17 @@ defaults: {
 },
 
 
-validation: {
-	'email': {
-		required: true,
-		pattern: 'email',
-		msg: 'PLease enter a valid emailID'
-	}
-},
+// validate: function(attrs) {
+// 	var errors[];
+
+
+// 	if(!attrs.email){
+// 		errors.push({name: 'email', message: 'Please fill email field.'});
+// 	}
+
+// 	return errors.length > 0 ? errors : false;
+
+// },
 
 initialize: function () {
 	

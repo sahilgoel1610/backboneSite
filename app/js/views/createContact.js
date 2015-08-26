@@ -16,7 +16,9 @@ onSubmitForm: function (argument) {
 							      phone: this.$('.contact-tel-input').val(),
 							      email: this.$('.contact-email-input').val()
 							    };
-					y.push(attr);		    
+					this.model.set(attr);
+
+					y.push(this.model);		    
 			}
 			
 			else
@@ -27,9 +29,13 @@ onSubmitForm: function (argument) {
 							      phone: this.$('.contact-tel-input').val(),
 							      email: this.$('.contact-email-input').val()
 				};
+				// console.log
+				// if(this.model.isValid())
+				// {
+					this.model.set(attr);
+					this.model.save();
+			 }
 
-				this.model.set(attr);
-			}				    
 
 	 this.saveForm();
 
