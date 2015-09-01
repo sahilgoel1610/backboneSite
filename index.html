@@ -1,97 +1,97 @@
+<!doctype html>
 <html>
 <head>
     
     <link href="vendor/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <link href="app/css/main.css" rel="stylesheet">
-  </head>
-	<body>
-        <div class="container">
-		<div>Hey there</div>
-		
-		<div class="contactDiv">
-            </div>
+</head>
+	
+  <body>
+    <div class="container">
+		  <div>Hey there</div>
+		  <div class="contactDiv" id="contactDiv"></div>
+    </div>
 
 	<script type="text/template" id="name">
 		<ul>
-			
-        <a href="#contacts/edit/<%-id%>" class="editContact">Edit</a> 
-            <a href="#contacts/delete/<%-id%>" class="deleteContact">Delete</a> 
+      <a href="#contacts/edit/<%-id%>" class="editContact">Edit</a> 
+      <a href="#contacts/delete/<%-id%>" class="deleteContact">Delete</a> 
       <li><%=name%></li>
       <li><%=email%></li>
       <li><%=phone%></li>
-            
-		</ul>
+    </ul>
 	</script>
 
-    <script type="text/template" id="contacts_list">
-      <h2 class="page-header text-center">List of contacts</h2>
-      <p class="text-center">
-        <a href="#contacts/new" class="add_contact_but">Add Contact</a>
-      </p>
-      <ul class="media-list row contacts-container"></ul>
-    </script>
+  <script type="text/template" id="contacts_list">
+    <h2 class="page-header text-center">List of contacts</h2>
+    <p class="text-center">
+      <a href="#contacts/new" class="add_contact_but">Add Contact</a>
+    </p>
+    <ul class="media-list row contacts-container"></ul>
+  </script>
 
-    <script type="text/template" id="new-contact-form">
+  <script type="text/template" id="new-contact-form">
     <h2 class="page-header text-center"> Contact</h2>
-      <form role="form" class="form-horizontal contract-form">
-        <div class="form-group">
-          <label class="col-sm-4 control-label">Full name:</label>
-          <div class="col-sm-6">
-            <input type="text" class="form-control contact-name-input" value="<%= name %>">
-          </div>
+    <form role="form" class="form-horizontal contract-form">
+      <div class="form-group">
+        <label class="col-sm-4 control-label">Full name:</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control contact-name-input" value="<%= name %>">
         </div>
-        <div class="form-group">
-          <label class="col-sm-4 control-label">Telephone number:</label>
-          <div class="col-sm-6">
-            <input type="tel" class="form-control contact-tel-input" value="<%= phone %>">
-          </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-4 control-label">Telephone number:</label>
+        <div class="col-sm-6">
+          <input type="tel" class="form-control contact-tel-input" value="<%= phone %>">
         </div>
-        <div class="form-group">
-          <label class="col-sm-4 control-label">Email address:</label>
-          <div class="col-sm-6">
-            <input type="text" class="form-control contact-email-input" value="<%- email %>">
-          </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-4 control-label">Email address:</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control contact-email-input" value="<%- email %>">
         </div>
-        
-        <div class="form-group">
-          <div class="col-sm-offset-4 col-sm-3">
-            <button type="submit" class="btn btn-outline btn-lg btn-block">Submit</button>
-          </div>
-          <div class="col-sm-3">
-            <a href="#contacts" class="btn btn-outline btn-lg btn-block">Cancel</a>
-          </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-4 col-sm-3">
+          <button type="submit" class="btn btn-outline btn-lg btn-block">Submit</button>
         </div>
-      </form>
-     </script>
+        <div class="col-sm-3">
+          <a href="#contacts" class="btn btn-outline btn-lg btn-block">Cancel</a>
+        </div>
+      </div>
+    </form>
+  </script>
 
 	<script src="vendor/jquery/jquery.js"></script>
-    <script src="vendor/underscore/underscore.js"></script>
-    <script src="vendor/backbone/backbone.js"></script>
-    <script src="vendor/backbone/backbone.localStorage.js"></script>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="vendor/underscore/underscore.js"></script>
+  <script src="vendor/backbone/backbone.js"></script>
+  <script src="vendor/backbone/backbone.localStorage.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    
+  <script src="app/js/app.js"></script>
+  <script src="app/js/models/question.js"></script>
+  <script src="app/js/collections/directory.js"></script>
+  <script src="app/router.js"></script>
+    <!-- bacbone view 
+    //<script src="app/js/views/contact.js"></script>
+    // <script src="app/js/views/list.js"></script>
+    // <script src="app/js/views/contactForm.js"></script>
+    //<script src="app/router.js"></script>
+    // <script src="app/js/views/createContact.js"></script> -->
 
-
-
-
-    <script src="app/js/app.js"></script>
-    <script src="app/js/models/question.js"></script>
-    <script src="app/js/collections/directory.js"></script>
-    <script src="app/js/views/contact.js"></script>
-    <script src="app/js/views/list.js"></script>
-    <script src="app/js/views/contactForm.js"></script>
-    <script src="app/js/views/createContact.js"></script>
-    <script src="app/router.js"></script>
+    <!-- react starts here -->
+  
+    <script src="app/js/build/react.js"></script>
+    
 
     <script>
     
-    // var singleContact = new appContact(
-    //     													{   id:1,
-    //                                                             name: 'JavaScript: The Good Parts',
-    //                                                             email: 'Douglas Crockford', 
-    //                                                             phone: '2008'}
-    // 														);
+    var profile = new appContact({   id:1,
+                                      name: 'JavaScript: The Good Parts',
+                                      email: 'Douglas Crockford', 
+                                      phone: '2008'
+                                    });
 
     
     var k=[
@@ -104,17 +104,19 @@
             { id:2, 
               name: 'JavaScript: The Good Parts',
               email: 'Douglas Crockford', 
-              phone: '2008'
+              phone: '2001'
             }]; 
 
 
     // var x= new contact({model: singleContact});
-    // var y= new directory(k);
+    var y= new directory(k);
     // // var z= new list([collection: y]);
     // var z= new list({collection: y});
     //  this.$('.container').append(z.render().$el);
 
     </script>
-</div>
+    <script src="app/js/build/react_contact.js"></script>
+    <script src="app/js/build/list_component.js"></script>
+   
 	</body>
 </html>

@@ -11,9 +11,9 @@ routes: {
 }
 
 });
-var y= new directory();
+// var y= new directory();
     // var z= new list([collection: y]);
-    var z= new list({collection: y});
+    // var z= new list({collection: y});
 
 var app_router= new appRouter;
 
@@ -33,7 +33,7 @@ app_router.on('route:deleteContact',function(id)
 
 });
 app_router.on('route:editContact',function(id){
-
+// alert("router working");
 	var editThis=y.get(id);
 	 if (editThis) {
 	 	console.log("contact being edited");
